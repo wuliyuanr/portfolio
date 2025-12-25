@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Corner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-planets">
+
+<div class="bg-lightness"></div>
+
+<button class="menu-toggle">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <ul class="menu-list">
+        <li><a href="1-index.html">about me</a></li>
+        <li><a href="2-media.html">favorites</a></li>
+        <li><a href="4-Astronomy popularization.html">ASTRONOMY</a></li>
+        <li><a href="3-contact.html">contact</a></li>
+    </ul>
+</div>
+
+<div class="main-content fade-in">
+
+    <div class="astro-wrapper">
+
+        <!-- =========== 顶部二级导航 =========== -->
+        <div class="subnav">
+            <a href="4.1-planets.html">Solar System</a>
+            <a href="4.2-exoplanets.html">Exoplanets</a>
+            <a href="4.3-books.html">Books</a>
+        </div>
+    </div>
+
+</div>
+
+<!-- =========== JS =========== -->
+<script>
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('.sidebar').classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+});
+</script>
+
+<script>
+function adjustBackgroundBrightness() {
+    const hour = new Date().getHours();
+    let brightness = hour >= 7 && hour < 17 ? 1 : hour >= 17 && hour < 20 ? 0.8 : 0.55;
+    document.documentElement.style.setProperty("--bg-brightness", brightness);
+}
+adjustBackgroundBrightness();
+</script>
+
+</body>
+</html>
