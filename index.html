@@ -3,61 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王雪缘 · Portfolio</title>
+    <title> Corner </title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-index">
 
-    <!-- 导航栏 -->
-<nav class="navbar">
-    <div class="nav-left">Wang Xueyuan</div>
+<div class="bg-lightness"></div>
 
-    <ul class="nav-right">
-        <li><a href="#about">关于我</a></li>
-        <li><a href="#projects">作品集</a></li>
-        <li><a href="#contact">联系我</a></li>
+<button class="menu-toggle">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <ul class="menu-list">
+        <li><a href="1-index.html">about me</a></li>
+        <li><a href="2-media.html">favorites</a></li>
+        <li><a href="4-Astronomy popularization.html">ASTRONOMY</a></li>
+        <li><a href="3-contact.html">contact</a></li>
     </ul>
-</nav>
+</div>
 
-    <!-- 顶部区域 -->
-    <header class="header">
-        <img src="assets/identification photo.png" class="avatar">
-        <h1>王雪缘</h1>
-        <p>Front-end Developer · Astronomy Graduate Student</p>
-    </header>
+<div class="main-content fade-in">
+    <div class="masonry">
 
-    <!-- 关于我 -->
-    <section id="about" class="section">
-        <h2>关于我</h2>
-        <p>中山大学天文学硕士，具备前端开发基础、GitHub Pages 部署经验以及多页面网站独立搭建能力。</p>
-    </section>
+        <!-- 文字模块 1（简介） -->
+        <div class="block text-block intro">
+            <h2>王雪缘 Xueyuan Wang </h2>
+            
+            <p class="space"></p>  <!-- 空行 -->
 
-    <!-- 项目经验 -->
-    <section id="projects" class="section">
-        <h2>项目作品</h2>
-        <div class="project-list">
-
-            <div class="project">
-                <h3>EPF 2025 国际会议官网</h3>
-                <p>独立负责网站架构、页面设计与前端开发。</p>
-                <a href="https://epf2025.github.io/logistics/" target="_blank">访问网站</a>
-            </div>
-
-            <div class="project">
-                <h3>Portfolio Site（本页面）</h3>
-                <p>使用原生 HTML/CSS/JS 搭建，展示个人技能、项目与链接。</p>
-                <a href="#" target="_blank">查看代码（之后加 GitHub 链接）</a>
-            </div>
-
+            <p>2024年 天文学 硕士 中山大学</p>
+            <p>Planets & Exoplanets</p>
         </div>
-    </section>
 
-    <!-- 联系我 -->
-    <footer id="contact" class="footer">
-        <p>邮箱：<a href="mailto:wuliyuanr@163.com">wuliyuanr@163.com</a></p>
-    </footer>
+        <!-- 图片们 -->
+        <img class="block" src="assets/me1.jpg">
 
-    <script src="script.js"></script>
+        <!-- 文案 2 -->
+        <div class="block text-block wide">
+            Welcome to my corner.
+        </div>
+
+        <img class="block" src="assets/me2.jpg">
+
+        <div class="block text-block">
+            I love you.
+        </div>
+
+        <img class="block" src="assets/me4.jpg">
+
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- 把 JS 放在 body 最底部（非常重要） -->
+<script>
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('.sidebar').classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+});
+</script>
+
+<script>
+    function adjustBackgroundBrightness() {
+        const hour = new Date().getHours();
+        let brightness = 1;
+    
+        if (hour >= 7 && hour < 17) brightness = 1;     // 白天
+        else if (hour >= 17 && hour < 20) brightness = 0.8;
+        else brightness = 0.55;                          // 夜晚
+    
+        document.documentElement.style.setProperty("--bg-brightness", brightness);
+    }
+    
+    adjustBackgroundBrightness();
+</script>
+
 </body>
 </html>
