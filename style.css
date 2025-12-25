@@ -206,8 +206,8 @@ body::after {
 }
 
 .collage-item {
-    position: relative;
     aspect-ratio: 1 / 1;
+    overflow: hidden;
 }
 
 .collage-item img {
